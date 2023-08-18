@@ -25,6 +25,7 @@
         <commons-lang3.version>3.12.0</commons-lang3.version>
         <logback-classic.version>1.2.5</logback-classic.version>
         <maven-dependency-plugin.version>3.6.0</maven-dependency-plugin.version>
+        <maven-dependency-plugin.copy-dependencies.skip>false</maven-dependency-plugin.copy-dependencies.skip>
     </properties>
 
     <build>
@@ -81,6 +82,9 @@
             <plugin>
                 <artifactId>maven-dependency-plugin</artifactId>
                 <version>${maven-dependency-plugin.version}</version>
+                <configuration>
+                    <skip>${maven-dependency-plugin.copy-dependencies.skip}</skip>
+                </configuration>
                 <executions>
                     <execution>
                         <id>copy-dependencies</id>
